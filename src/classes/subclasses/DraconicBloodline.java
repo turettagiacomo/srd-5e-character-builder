@@ -1,9 +1,16 @@
 package classes.subclasses;
 
 import java.util.List;
+import java.util.Map;
 
 public class DraconicBloodline extends Subclass implements SorcererSubclass {
     private final String damageType;
+    private static final Map<Integer, List<String>> SUBCLASS_PRIVILEGE = Map.ofEntries(
+            Map.entry(1, List.of("Dragon Ancestor", "Draconic Resilience")),
+            Map.entry(6, List.of("Elemental Affinity")),
+            Map.entry(14, List.of("Dragon Wings")),
+            Map.entry(18, List.of("Draconic Presence"))
+    );
 
     public DraconicBloodline(String ancestry) {
         super("Draconic ancestry");
@@ -44,7 +51,7 @@ public class DraconicBloodline extends Subclass implements SorcererSubclass {
     }
 
     @Override
-    public void applySubclassBonuses(List<String> subclassBonuses) {
-        subclassBonuses.add("Draconic resilience");
+    public void applySubclassPrivileges(int level, List<String> classBonuses){
+        classBonuses.addAll(SUBCLASS_PRIVILEGE.getOrDefault(level, List.of()));
     }
 }
