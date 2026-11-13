@@ -56,7 +56,7 @@ public abstract class CharacterClass implements Serializable {
 
     public void applyWeapons(List<String> weapons) {}
 
-    public abstract void applyClassBonuses(List<String> classBonuses);
+    public abstract void applyClassPrivileges(int level, List<String> classBonuses);
 
     public Ability getSpellcastingAbility(){
         return null;
