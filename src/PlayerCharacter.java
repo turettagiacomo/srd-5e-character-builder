@@ -561,7 +561,7 @@ public class PlayerCharacter implements Serializable {
             this.characterClass.applyEquipment(this.inventory);
             this.characterClass.applyArmor(this.armors);
             this.characterClass.applyWeapons(this.weapons);
-            this.characterClass.applyClassBonuses(this.extraBonuses);
+            this.characterClass.applyClassPrivileges(this.level, this.extraBonuses);
             this.characterClass.applyResistances(this.resistances);
             this.characterClass.applyProficiencySavingThrows(this.savingThrowsProficiencies);
             this.characterClass.applyProficiencies(this.skillProficiencies);
