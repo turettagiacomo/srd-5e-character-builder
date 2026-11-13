@@ -5,9 +5,19 @@ import classes.subclasses.SorcererSubclass;
 import classes.subclasses.Subclass;
 
 import java.util.List;
+import java.util.Map;
 
 public class Sorcerer extends CharacterClass {
     private final Subclass subclass;
+    static final Map<Integer, List<String>> CLASS_PRIVILEGE = Map.ofEntries(
+            Map.entry(1, List.of("Spellcasting", "Sorcerous Origin")),
+            Map.entry(2, List.of("Font of magic")),
+            Map.entry(3, List.of("Metamagic")),
+            Map.entry(10, List.of("Metamagic (extra option)")),
+            Map.entry(17, List.of("Metamagic (extra option)")),
+            Map.entry(20, List.of("Sorcerous Restoration"))
+    );
+
     public Sorcerer(SorcererSubclass subclassInput){
         super("Sorcerer", 2, "1d6", 6);
         this.subclass = (Subclass) subclassInput;
@@ -32,8 +42,9 @@ public class Sorcerer extends CharacterClass {
     }
 
     @Override
-    public void applyClassBonuses(List<String> classBonuses) {
-        this.subclass.applySubclassBonuses(classBonuses);
+    public void applyClassPrivileges(int level, List<String> classBonuses) {
+        classBonuses.addAll(CLASS_PRIVILEGE.getOrDefault(level, List.of()));
+        this.subclass.applySubclassPrivileges(level, classBonuses);
     }
 
     @Override
