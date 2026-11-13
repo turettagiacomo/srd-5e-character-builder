@@ -25,5 +25,5 @@ public abstract class Subclass implements Serializable{
     public void applyArmorProficiencies(List<String> armorProficiencies){}
     public void applyWeaponProficiencies(List<String> weaponProficiencies){}
     public void applyResistances(List<String> resistances){}
-    public void applySubclassBonuses(List<String> subclassBonuses){}
+    public abstract void applySubclassPrivileges(int level, List<String> classBonuses);
 }
