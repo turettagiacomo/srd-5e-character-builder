@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Barbarian extends CharacterClass {
-
     private static final Map<Integer, List<String>> CLASS_PRIVILEGE = Map.ofEntries(
             Map.entry(1, List.of("Rage", "Unarmored defence")),
             Map.entry(2, List.of("Reckless Attack", "Danger Sense")),
