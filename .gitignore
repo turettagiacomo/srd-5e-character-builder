@@ -1,0 +1,22 @@
+# IntelliJ IDEA / JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Compilation output directories
+out/
+target/
+build/
+*.class
+
+# Application data and logs
+*.dat
+*.log
+
+# Gradle (if applicable)
+.gradle/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
