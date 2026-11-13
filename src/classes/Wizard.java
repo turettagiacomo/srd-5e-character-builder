@@ -3,8 +3,16 @@ package classes;
 import attributes.Ability;
 
 import java.util.List;
+import java.util.Map;
 
 public class Wizard extends CharacterClass {
+    static final Map<Integer, List<String>> CLASS_PRIVILEGE = Map.ofEntries(
+            Map.entry(1, List.of("Spellcasting", "Arcane Recovery")),
+            Map.entry(2, List.of("Arcane Tradition")),
+            Map.entry(18, List.of("Spell Mastery")),
+            Map.entry(20, List.of("Signature Spells"))
+    );
+
     public Wizard(){
         super("Wizard", 2, "1d6", 6);
     }
@@ -28,8 +36,8 @@ public class Wizard extends CharacterClass {
     }
 
     @Override
-    public void applyClassBonuses(List<String> classBonuses) {
-        classBonuses.add("Arcane Recovery");
+    public void applyClassPrivileges(int level, List<String> classBonuses) {
+        classBonuses.addAll(CLASS_PRIVILEGE.getOrDefault(level, List.of()));
     }
 
     @Override
