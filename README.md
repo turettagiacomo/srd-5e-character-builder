@@ -102,7 +102,7 @@ The sun rises outside, and Hubris wakes up to a strange sound...
 
 ## Project status
 
-At present, the program guides the user through all the complicated steps of the D&D 5e character creation. It starts with the choice of the race and optional subrace. Then it lets the user select the class and all its features, such as weapons, equipment and subclass. After that there's the choice of the background and the physical details. The program also gives the user the choice of setting up the stats with any of the three methods. Under the hood it also handles all the math of the abilities, skills, armor class and hit points. After everything the program prints the character sheet.
+At present, the program guides the user through all the complicated steps of the D&D 5e character creation for a level 1 character. It starts with the choice of the race and optional subrace. Then it lets the user select the class and all its features, such as weapons, equipment and subclass. After that there's the choice of the background and the physical details. The program also gives the user the choice of setting up the stats with any of the three methods. Under the hood it also handles all the math of the abilities, skills, armor class and hit points. After everything the program prints the character sheet.
 
 It is also possible to save the character as a `.dat` file and load it later.
 
@@ -157,7 +157,7 @@ DwarvenSubrace subDwarf = null;
 subDwarf = new HillDwarf();
 ```
 
-If I hadn't used the interface, I would have needed to verify that `HillDwarf` was actually a dwarven subrace. The only downside is that this strategy requires having a total of three interfaces for the classes and four for the races. When the level-up feature will be implemented this cost will grow to an interface for each class plus four for the races.
+If I hadn't used the interface, I would have needed to verify that `HillDwarf` was actually a dwarven subrace. The only downside is that this strategy requires having a total of three interfaces for the classes and four for the races. When the level-up feature is implemented this cost will grow to an interface for each class plus four for the races.
       
 ### App, utility class and printing
 
