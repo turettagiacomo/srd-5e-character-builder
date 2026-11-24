@@ -504,7 +504,7 @@ public class PlayerCharacter implements Serializable {
                     armorClass += getAbilityModifier(Ability.WISDOM);
                 }
             }
-            else if(extraBonuses.contains("Draconic resilience")){
+            else if(extraBonuses.contains("Draconic Resilience")){
                 armorClass = 13 + dexMod;
             }
         }
@@ -519,7 +519,7 @@ public class PlayerCharacter implements Serializable {
      */
     public void calculateHitPoints() {
         this.maxHitPoints = this.characterClass.getHitPoints() + getAbilityModifier(Ability.CONSTITUTION);
-        if (this.extraBonuses.contains("Dwarven toughness") || this.extraBonuses.contains("Draconic resilience")) {
+        if (this.extraBonuses.contains("Dwarven Toughness") || this.extraBonuses.contains("Draconic Resilience")) {
             this.maxHitPoints += 1;
         }
         this.currentHitPoints = this.maxHitPoints;
