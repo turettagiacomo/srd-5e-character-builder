@@ -35,8 +35,8 @@ public class Dwarf extends Race {
     }
     @Override
     public void applyExtraBonuses(List<String> extras) {
-        extras.add("Dwarven toughness");
         extras.add("Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus");
+        this.subrace.applyExtraBonuses(extras);
     }
     @Override
     public void applyWeaponProficiencies(List<String> weaponProficiency) {
